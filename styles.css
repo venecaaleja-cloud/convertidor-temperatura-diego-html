@@ -1,0 +1,142 @@
+/* --- ESTILOS GENERALES --- */
+:root {
+    --color-fondo: #f4f4f9;
+    --color-tarjeta: #ffffff;
+    --color-texto: #333;
+    --color-borde: #ccc;
+    --color-primario: #000000;
+    --color-deshabilitado: #cccccc;
+    --color-exito: #28a745;
+    --fuente: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente);
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal (Tarjeta) */
+.contenedor {
+    background-color: var(--color-tarjeta);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #e0e0e0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+    text-align: center;
+}
+
+p.subtitulo {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* Formulario y campos */
+.grupo-formulario {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos bajen en pantallas pequeñas */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Estilos de inputs y selects */
+input, select, button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+}
+
+/* Input de número */
+input[type="number"] {
+    width: 100px;
+    text-align: center;
+}
+
+/* Selects */
+select {
+    cursor: pointer;
+    background-color: white;
+    min-width: 140px;
+}
+
+/* Botón */
+button {
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 25px;
+    width: auto;
+}
+
+/* Estado deshabilitado del botón */
+button:disabled {
+    background-color: var(--color-deshabilitado);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+button:not(:disabled):hover {
+    background-color: #333;
+    transform: translateY(-1px);
+}
+
+/* Área de resultado */
+.resultado {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    min-height: 30px; 
+    color: var(--color-exito);
+    padding: 10px;
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+}
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 500px) {
+    .grupo-formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    input[type="number"], select, button {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

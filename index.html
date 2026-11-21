@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Temperatura</title>
+    <!-- Enlace al archivo CSS separado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Convertidor de Temperatura</h1>
+        <p class="subtitulo">Ingresa la temperatura, selecciona las unidades y presiona convertir.</p>
+
+        <form id="formulario-conversion">
+            <div class="grupo-formulario">
+                <!-- Campo de entrada numérica -->
+                <input type="number" id="input-temperatura" placeholder="0.00" step="any" required>
+                
+                <!-- Selección unidad origen -->
+                <select id="select-origen" required>
+                    <option value="" disabled selected>De Unidad</option>
+                    <option value="Celsius">Celsius</option>
+                    <option value="Fahrenheit">Fahrenheit</option>
+                    <option value="Kelvin">Kelvin</option>
+                </select>
+
+                <!-- Selección unidad destino -->
+                <select id="select-destino" required>
+                    <option value="" disabled selected>A Unidad</option>
+                    <option value="Celsius">Celsius</option>
+                    <option value="Fahrenheit">Fahrenheit</option>
+                    <option value="Kelvin">Kelvin</option>
+                </select>
+
+                <!-- Botón Deshabilitado por defecto -->
+                <button type="submit" id="btn-convertir" disabled>Convertir</button>
+            </div>
+        </form>
+
+        <!-- Div para mostrar el resultado -->
+        <div id="resultado" class="resultado"></div>
+    </main>
+
+    <!-- Enlace al archivo JavaScript separado (al final del body para mejor rendimiento) -->
+    <script src="java.js"></script>
+</body>
+</html>
